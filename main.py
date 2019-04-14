@@ -23,11 +23,11 @@ def inception_score() :
 
 
 def frechet_inception_distance() :
-    filenames = glob(os.path.join('/real_target', '*.*'))
+    filenames = glob(os.path.join('./real_target', '*.*'))
     real_images = [get_images(filename) for filename in filenames]
     real_images = np.transpose(real_images, axes=[0, 3, 1, 2])
 
-    filenames = glob(os.path.join('/fake', '*.*'))
+    filenames = glob(os.path.join('./fake', '*.*'))
     fake_images = [get_images(filename) for filename in filenames]
     fake_images = np.transpose(fake_images, axes=[0, 3, 1, 2])
 
